@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Login 05</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="../home/css/style.css">
+
+</head>
+<body>
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center mb-5">
+        <h2 class="heading-section">Welcome  </h2>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-7 col-lg-5">
+        <div class="wrap">
+          <div class="img" style="background-image: url(../home/images/bg-1.jpg);"></div>
+          <div class="login-wrap p-4 p-md-5">
+            <div class="d-flex">
+              <div class="w-100">
+                <h3 class="mb-4">Please Fill in </h3>
+              </div>
+
+            </div>
+            <form class="signin-form" th:action="@{/game}" method="post" th:object="${nameForm}">
+
+
+
+              <div class="form-group mt-3">
+
+                <input class="form-control" type="text" id="player1" name="player1">
+                <label class="form-control-placeholder" >Player One's name </label>
+              </div>
+              <div class="form-group mt-3">
+
+                <input class="form-control" type="text" id="player2" name="player2">
+
+                <label class="form-control-placeholder" >Player Two's name </label>
+              </div>
+
+              <div class="alert alert-danger" th:each="err : ${#fields.errors('all')}" th:text="${err}"></div>
+
+
+
+
+              <div class="form-group">
+                <button type="submit" class="form-control btn btn-primary rounded submit px-3">Start Game</button>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="../home/js/jquery.min.js"></script>
+<script src="../home/js/popper.js"></script>
+<script src="../home/js/bootstrap.min.js"></script>
+<script src="../home/js/main.js"></script>
+
+</body>
+</html>
+
